@@ -4,6 +4,7 @@ import RegistrationScreen from './assets/Screens/RegistrationScreen';
 import LoginScreen from './assets/Screens/LoginScreen';
 import Home from './assets/Screens/Home';
 import PostsScreen from './assets/Screens/PostsScreen';
+import MapScreen from './assets/Screens/MapScreen';
 import CreatePostsScreen from './assets/Screens/CreatePostsScreen';
 import CommentsScreen from './assets/Screens/CommentsScreen';
 import ProfileScreen from './assets/Screens/ProfileScreen';
@@ -27,6 +28,7 @@ export default function App() {
           <MainStack.Screen name="Login" component={LoginScreen} />
           <MainStack.Screen name="Home" component={Home} options={{ headerShown: false }} />
           <MainStack.Screen name="PostsScreen" component={PostsScreen} />
+          <MainStack.Screen name="Map" component={MapScreen} />
           <MainStack.Screen name="CreatePosts" component={CreatePostsScreen} options={{ headerShown: false }} />
           <MainStack.Screen name="Comments" component={CommentsScreen} />
           <MainStack.Screen name="Profile" component={ProfileScreen}  options={{ headerShown: false }} />
