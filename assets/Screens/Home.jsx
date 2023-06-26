@@ -78,8 +78,8 @@ const Home = ({ navigation, route }) => {
           }}
         >
           <Tabs.Screen name="PostsScreen" component={PostsScreen} />
-          <Tabs.Screen name="Profile" component={ProfileScreen} />
           <Tabs.Screen name="CreatePosts" component={CreatePostsScreen} />
+          <Tabs.Screen name="Profile" component={ProfileScreen} />
         </Tabs.Navigator>
       )}
     </View>
