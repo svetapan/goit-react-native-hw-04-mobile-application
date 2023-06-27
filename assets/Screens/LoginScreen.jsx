@@ -11,6 +11,7 @@ import {
   TouchableWithoutFeedback,
 } from "react-native";
 import React, { useState, useEffect } from "react";
+// import { useNavigation } from '@react-navigation/native';
 
 const LoginScreen = ({ navigation }) => {
   const [focusedInput, setFocusedInput] = useState(null);
@@ -22,6 +23,8 @@ const LoginScreen = ({ navigation }) => {
   const [isEmailEntered, setIsEmailEntered] = useState(false);
   const [isPasswordEntered, setIsPasswordEntered] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
+
+    // const navigation = useNavigation();
 
   useEffect(() => {
     setIsFormValid(email !== "" && password !== "");
@@ -137,6 +140,7 @@ const LoginScreen = ({ navigation }) => {
     </TouchableWithoutFeedback>
   );
 };
+
 export default LoginScreen;
 
 const styles = StyleSheet.create({
@@ -173,6 +177,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   input: {
+    height: 48,
     color: "#212121",
     backgroundColor: "#F6F6F6",
     borderWidth: 1,
