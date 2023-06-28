@@ -1,3 +1,4 @@
+import React, { useState, useEffect} from "react";
 import {
   ImageBackground,
   StyleSheet,
@@ -6,12 +7,9 @@ import {
   TextInput,
   TouchableOpacity,
   KeyboardAvoidingView,
-  Platform,
   Keyboard,
   TouchableWithoutFeedback,
 } from "react-native";
-import React, { useState, useEffect } from "react";
-// import { useNavigation } from '@react-navigation/native';
 
 const LoginScreen = ({ navigation }) => {
   const [focusedInput, setFocusedInput] = useState(null);
@@ -20,11 +18,8 @@ const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [isEmailEntered, setIsEmailEntered] = useState(false);
-  const [isPasswordEntered, setIsPasswordEntered] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
 
-    // const navigation = useNavigation();
 
   useEffect(() => {
     setIsFormValid(email !== "" && password !== "");
@@ -55,12 +50,10 @@ const LoginScreen = ({ navigation }) => {
         <ImageBackground
           source={require("../images/bg-app.jpg")}
           style={styles.imageBackground}
-          imageStyle={{
-            minHeight: 812,
-          }}
         >
           <KeyboardAvoidingView
-            behavior={Platform.OS === "ios" ? "padding" : null}
+            keyboardVerticalOffset={-100}
+            behavior="padding"
             style={styles.container}
           >
             <View style={styles.titleContainer}>
@@ -78,7 +71,6 @@ const LoginScreen = ({ navigation }) => {
                 value={email}
                 onChangeText={(text) => {
                   setEmail(text);
-                  setIsEmailEntered(text.trim() !== "");
                   console.log("Email:", text);
                 }}
                 onFocus={() => setFocusedInput("email")}
@@ -96,10 +88,8 @@ const LoginScreen = ({ navigation }) => {
                 name="password"
                 value={password}
                 secureTextEntry={!showPassword}
-                editable={isEmailEntered}
                 onChangeText={(text) => {
                   setPassword(text);
-                  setIsPasswordEntered(text !== "");
                   console.log("Password:", text);
                 }}
                 onFocus={() => setFocusedInput("password")}

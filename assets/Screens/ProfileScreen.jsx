@@ -59,7 +59,7 @@ const ProfileScreen = ({ navigation }) => {
               <Text style={styles.nameTitle}>Natali Romanova</Text>
             </View>
             <View style={styles.posts}>
-              <ScrollView contentContainerStyle={styles.scrollContent}>
+              <ScrollView>
                 <View style={styles.post}>
                   <TouchableOpacity
                     style={styles.postImageLink}
@@ -324,14 +324,6 @@ const styles = StyleSheet.create({
   posts: {
     flex: 1,
     position: "relative",
-  },
-  scrollContent: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    overflow: "scroll",
   },
   post: {
     marginBottom: 32,
